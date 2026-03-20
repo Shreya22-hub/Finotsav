@@ -21,3 +21,29 @@ function calculateBudget(){
     document.getElementById("totalCost").innerHTML =
         "Estimated Total Budget: ₹ " + total.toLocaleString();
 }
+function revealOnScroll(){
+    const elements = document.querySelectorAll(".fade-in");
+
+    elements.forEach((el)=>{
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if(elementTop < windowHeight - 100){
+            el.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+window.addEventListener("scroll", function(){
+    if(window.scrollY > 300){
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
+});
+
+document.getElementById("topBtn").onclick = function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+};
