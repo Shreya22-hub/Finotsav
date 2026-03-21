@@ -1,6 +1,8 @@
 import Navbar from "./Navbar";
 import Services from "./Services";
 import Gallery from "./Gallery";
+import Testimonials from "./Testimonials";
+import Pricing from "./Pricing";
 export default function Home() {
   return (
     <>
@@ -23,6 +25,8 @@ export default function Home() {
       {/* SERVICES SECTION */}
       <Services />
       <Gallery />
+      <Testimonials/>
+      <Pricing />
     </>
   );
 }
